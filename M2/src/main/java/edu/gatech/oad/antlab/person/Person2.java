@@ -1,11 +1,12 @@
 package edu.gatech.oad.antlab.person;
+import java.lang.Math;
 
 /**
  *  A simple class for person 2
  *  returns their name and a
- *  modified string 
+ *  modified string
  *
- * @author Bob
+ * @author Sora Bang
  * @version 1.1
  */
 public class Person2 {
@@ -31,14 +32,24 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+	  int length = input.length();
+	  String answer = "";
+	  for (int i = 0; i < length; i++) {
+	  	int index = (int)(Math.random() * length);
+	  	char a = input.charAt(index);
+	  	input = input.substring(0, index) + input.substring(index + 1, length);
+	  	answer += a;
+	  	length--;
+	  }
+	  return answer;
+
 	}
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
 	 *
 	 * @param input the varying string
-	 * @return the string representing the 
+	 * @return the string representing the
 	 *         object
 	 */
 	public String toString(String input) {
